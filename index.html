@@ -25,13 +25,19 @@
             };
         }
 
+        handleClick(event) {
+            // Отреагировать на щелчок мышью.
+        };
+
         render() {
-            const status = this.state.isMusicPlaying
-                ? 'Playing'
-                : 'Not playing';
+            let status = this.state.isMusicPlaying
+                ? 'Playing :)'
+                : 'Not playing :(';
             return (
                 <div>
-                    <h1>{ status }</h1>
+                    <h1 onClick={this.handleClick.bind(this)}>
+                        { status }
+                    </h1>
                     <PlayButton />
                 </div>
             );
