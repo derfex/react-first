@@ -11,5 +11,23 @@
 <script src="https://soulwire.github.io/sketch.js/js/sketch.min.js"></script>
 <script src="app.js"></script>
 <script type="text/babel">
-    // React code goes here.
+    const OurFirstComponent = () => {
+        return (
+            <h1>Hello, I am a React Component!</h1>
+        );
+    };
+
+    class Container extends React.Component {
+        render() {
+            return (
+                <div>
+                    <h1>I am the parent!</h1>
+                    <OurFirstComponent />
+                </div>
+            );
+        }
+    }
+
+    const placeWeWantToPutComponent = document.getElementById('hook');
+    ReactDOM.render(<Container />, placeWeWantToPutComponent);
 </script>
