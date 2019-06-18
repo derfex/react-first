@@ -34,8 +34,10 @@
 
         // Отреагировать на щелчок мышью.
         handleClick() {
-            this.setState({
-                isMusicPlaying: !this.state.isMusicPlaying,
+            this.setState(prevState => {
+                return {
+                    isMusicPlaying: !prevState.isMusicPlaying,
+                };
             });
         };
 
