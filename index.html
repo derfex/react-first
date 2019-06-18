@@ -34,6 +34,7 @@
 
         // Отреагировать на щелчок мышью.
         handleClick() {
+            this.audio[this.state.isMusicPlaying ? 'pause' : 'play']();
             this.setState(prevState => {
                 return {
                     isMusicPlaying: !prevState.isMusicPlaying,
@@ -48,6 +49,9 @@
                         onClick={this.handleClick.bind(this)}
                         isMusicPlaying={this.state.isMusicPlaying}
                     />
+                    <audio id="audio" ref={(audioTag) => {
+                        this.audio = audioTag;
+                    }}/>
                 </div>
             );
         }
