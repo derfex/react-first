@@ -16,7 +16,11 @@
             ? 'play active'
             : 'play';
         return (
-            <a href="#" title="Play video" className={className}/>
+            <a
+                href="#" title="Play video"
+                className={className}
+                onClick={props.onClick}
+            />
         );
     };
 
@@ -39,6 +43,7 @@
             return (
                 <div>
                     <PlayButton
+                        onClick={this.handleClick.bind(this)}
                         isMusicPlaying={this.state.isMusicPlaying}
                     />
                 </div>
